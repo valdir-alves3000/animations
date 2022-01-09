@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clear: #5ff436;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #222;
+}
+
+.thunderbolt {
+  display: flex;
+  gap: 60px;
+}
+.thunderbolt .shape {
+  position: relative;
+  width: 0;
+  height: 0;
+  transform: skew(-25deg) translate(-50%, -50%) scale(1);
+
+  border-bottom: 60px solid var(--clear);
+  border-left: 30px solid transparent;
+  opacity: 0.1;
+}
+
+.thunderbolt .shape::before {
+  content: "";
+  position: absolute;
+  bottom: -110px;
+  right: -20px;
+
+  border-top: 60px solid var(--clear);
+  border-right: 30px solid transparent;
+}
+
+.thunderbolt .shape ~ .shape {
+  width: 25px;
+  height: 50px;
+  background: var(--clear);
+  transform: skew(-25deg) translate(0, 0);
+}
+
+.thunderbolt .shape:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: 20px;
+
+  border-bottom: 60px solid var(--clear);
+  border-left: 30px solid transparent;
+}
+
+.thunderbolt .shape:nth-child(3)::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: 20px;
+
+  width: 30px;
+  height: 60px;
+  background: var(--clear);
+}
+
+.thunderbolt .shape:nth-child(4) {
+  transform: skew(-25deg) translate(-50%, -50%);
+}
+
+.thunderbolt .shape:hover,
+.thunderbolt .shape ~ .shape:hover {
+  opacity: 1;
+  transform: skew(-25deg) translate(-50%, -50%) scale(2);
+}
