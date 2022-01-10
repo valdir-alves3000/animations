@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:300,400,500,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e80202;
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 12vw;
+
+  line-height: 0.6em;
+  z-index: 1000;
+  font-weight: 700;
+}
+
+.container h2 span {
+  font-size: 0.2em;
+  letter-spacing: 0.4em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.block {
+  position: absolute;
+  width: 50px;
+  height: 100px;
+
+  background: #e80202;
+  box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.2);
+  transform: translateX(var(--translateX)) translateY(var(--translateY))
+    scale(var(--scale));
+  animation: animate 17s linear infinite;
+  animation-delay: calc(var(--i) * -18s);
+}
+
+@keyframes animate {
+  0%,
+  2%,
+  98%,
+  100% {
+    transform: translateX(var(--translateX)) translateY(var(--translateY))
+      scale(var(--scale));
+  }
+  12%,
+  14%,
+  36%,
+  38%,
+  60%,
+  62%,
+  84%,
+  86% {
+    transform: translateX(0) translateY(0) scale(calc(var(--scale) - 3));
+  }
+  24%,
+  26% {
+    transform: translateX(calc(var(--translateX) * -1))
+      translateY(calc(var(--translateY) * -1)) scale(var(--scale));
+  }
+  48%,
+  50% {
+    transform: translateX(var(--translateX))
+      translateY(calc(var(--translateY) * -1)) scale(var(--scale));
+  }
+  72%,
+  74% {
+    transform: translateX(calc(var(--translateX) * -1))
+      translateY(var(--translateY)) scale(var(--scale));
+  }
+}
