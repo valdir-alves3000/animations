@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #222;
+}
+
+.loader,
+.loader .progress {
+  width: 300px;
+  height: 30px;
+  background: #00422357;
+  border-radius: 99px;
+}
+
+.loader .progress {
+  width: 0;
+  background: #e26801;
+  animation: progress 2.5s ease infinite;
+}
+
+@keyframes progress {
+  to {
+    width: 100%;
+  }
+}
