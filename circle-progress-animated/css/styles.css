@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: #222;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+}
+
+.box {
+  margin: 40px;
+}
+
+.box h2,
+.box p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.box h2 span {
+  font-size: 24px;
+}
+
+.box p {
+  top: calc(50% + 40px);
+  font-size: 1em;
+}
+
+.points {
+  position: absolute;
+  width: 3px;
+  height: 15px;
+  background: #0007;
+
+  transform: rotate(calc(var(--i) * var(--r))) translateY(-100px);
+  border-radius: 3px;
+}
+
+.points.active {
+  animation: animeGlow 0.01s linear forwards;
+  animation-delay: calc(var(--i) * 0.1s);
+}
+
+@keyframes animeGlow {
+  to {
+    background: var(--color);
+    box-shadow: 0 0 20px var(--color);
+  }
+}
